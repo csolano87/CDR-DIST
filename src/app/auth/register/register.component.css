@@ -1,0 +1,25 @@
+.bg{
+    background-position: center center;
+   color: #ff8970;
+   background-color: #113b7a;
+   text-align: center;
+ 
+
+  
+  }
+
+.bg img{
+    display:block;
+    margin:auto;
+   padding-top: 20%;
+  
+ 
+  }
+  button{
+  background-color: #113b7a;
+ text-decoration: none;
+outline: none;
+ border: none;
+ cursor: pointer;
+ display: inline-block;
+  }
