@@ -121,9 +121,9 @@ this.usuarios=user;
   }
   crearUsuario(){
 console.log(this.registerform.value)
-if (this.usuarios) {
+/* if (this.usuarios) {
 
-}  else { 
+}  else { */ 
 /*   if (this.registerform.invalid) {
     return Object.values(this.registerform.controls)
     .forEach(control=>{control.markAllAsTouched()});
@@ -153,7 +153,7 @@ if (this.usuarios) {
       text:(err.error.msg)
     });
   });   
-    } 
+   // } 
 }
 
  /*  */

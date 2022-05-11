@@ -49,10 +49,10 @@
           
             formControlName="doctor"
             [class.is-invalid]="doctorNoValido">
-            <option value="">-Seleccione </option>
+            <option ngValue="">-Seleccione </option>
        
             <option *ngFor="let lista of listadoctor" 
-             [value]="lista" >{{lista.Description}}</option>  
+             [ngValue]="lista" >{{lista.Description}}</option>  
             </select>
            
            

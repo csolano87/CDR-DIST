@@ -45,7 +45,7 @@ export class GetListService {
   buscarTodos(lista : List){
 
 
-    return this.http.get<ListaOrdenes>(`http://localhost:9090/api/buscarordenes/${lista}`,this.headers)
+    return this.http.get<ListaOrdenes>(`${baseUrl}/buscarordenes/${lista}`,this.headers)
     .pipe(
       delay(1500)
     )
@@ -53,7 +53,7 @@ export class GetListService {
 
   pdf2(lista: List){
     console.log('estoy en el servicio.',lista)
-    return this.http.get<ListaOrdenes>(`http://localhost:9090/api/buscar/${lista.SampleID}`)
+    return this.http.get<ListaOrdenes>(`${baseUrl}/buscar/${lista.SampleID}`)
   // return this.http.get<pdfPacientes>(`${environment.url}/buscar/${lista.SampleID}`)
    /* .pipe(
      delay(0)
