@@ -1,65 +1,28 @@
+.navbar {
+  background-color: #0076B5 !important;
+color: #fff;
 
-nav{
-    background: #113b7a;
-width: 100%;
-  }
-  nav:after{
-    content: '';
-    clear: both;
-    display: table;
+}
+.nav-link{
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px;
+cursor: pointer;
+}
+.navbar-brand{
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
 
-  }
-  nav .logo{
-    float: left;
-    color: white;
-    font-size: 27px;
-    font-weight: 600;
-    line-height: 70px;
-    padding-left: 40px;
-  }
-  nav ul{
-    float: right;
-  
-    margin-right: 40px;
-    list-style: none;
-    position: relative;
-  }
+.cta1{
 
-  nav ul li a{
-    color: white;
-    line-height: 40px;
+  margin: 5px 5px 5px 50px;
 
-    text-decoration: none;
-    font-size: 20px;
-  
-  
+}
 
-  }
-  nav ul li a:hover{
-    color: cyan;
-    border-radius: 5px;
-    box-shadow:  0 0 5px #33ffff,
-                 0 0 10px #66ffff;
-  }
-  nav ul ul li a:hover{
-    box-shadow: none;
-  }
-  nav ul ul{
-    position: absolute;
-    top: 90px;
-    border-top: 3px solid cyan;
-    opacity: 0;
-    visibility: hidden;
-    transition: top .3s;
-  }
-  nav ul ul ul{
-    border-top: none;
-  }
-  nav ul li:hover > ul{
-    top: 70px;
-    opacity: 1;
-    visibility: visible;
-  }
 
-  
- 
+ .cursor{
+cursor: pointer;
+}

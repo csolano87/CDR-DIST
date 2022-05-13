@@ -7,6 +7,11 @@ import { RegisterComponent } from './register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { PagesModule } from '../pages/pages.module';
+
+
+
+
 
 
 @NgModule({
@@ -20,6 +25,8 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
+  
   ],
   exports:[LoginComponent,
     RegisterComponent, ]

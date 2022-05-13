@@ -1,12 +1,15 @@
- <nav>
+<!--  <nav>
   <div class="logo">
    
             <a ><img src="assets/LOGOWEB.png" class="img-fluid"  width="120"  alt="" ></a>
           </div>
     
           <ul>
-         
-             <li><a  href="#">Salir</a></li>
+             <li><a href=""></a></li>
+             <li><a  href="#"
+               class="cursor"
+               (click)="logout()">
+               <i class="fa fa-power-off"></i> Salir</a></li>
           </ul>
        </nav>
    
@@ -16,4 +19,96 @@
           });
        </script>  
      
- 
+  -->
+
+<!--   
+<section id="nav-bar">
+
+   <nav class="navbar navbar-expand-lg navbar-light">
+      <a ><img src="assets/LOGOWEB.png" class="img-fluid"  width="120"  alt="" ></a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" 
+       aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarNav">
+         <ul class="navbar-nav ml-auto ">
+
+          <li class="nav-item ">
+            <a class="nav-link" routerLink="/">Inicio</a>
+          </li>
+           <li class="nav-item ">
+             <a class="nav-link" routerLink="usuarios">Lista Usuarios<span class="sr-only">(current)</span></a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" routerLink="/register">Registar usuarios</a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link" routerLink="ordenes">Lista ordenes</a>
+          </li>
+        
+   
+           <li class="nav-item">
+             <a class="nav-link "  >Bienvenido {{usuario.doctor}}</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#"></a>
+           </li>
+           <li class="nav-item">
+             <a 
+             class="cursor pt-5 p5"
+             (click)="logout()">
+             <i class="fa fa-power-off"></i> SALIR</a>
+           </li>
+         </ul>
+       </div>
+     </nav>
+   
+   
+   </section> -->
+
+
+
+   <nav class="navbar navbar-expand-lg  ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="assets/LOGOWEB.png" alt="logo" width="100" height="80" class="img-fluid">
+        
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+          <!-- <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Inicio</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" routerLink="usuarios">Lista de usuarios</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " routerLink="/register" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Registar Usuario
+            </a>
+       
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " routerLink="ordenes">Lista ordenes</a>
+          </li>
+
+          
+        </ul>
+    
+         
+     <ul class="navbar-nav  ml-2 mb-lg-0">
+      <li class="nav-item ">
+        <a class="nav-link "  href="">Bienvenido Dr. {{usuario.doctor}}</a></li>
+      <li class="nav-item ">
+       <a class="nav-link cursor" 
+       
+       (click)="logout()">
+       <i class="fa fa-power-off"></i> Salir</a>
+     </li>
+     </ul>
+      </div>
+    </div>
+  </nav>

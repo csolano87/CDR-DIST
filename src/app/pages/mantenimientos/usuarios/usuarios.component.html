@@ -1,1 +1,136 @@
-<p>usuarios works!</p>
+<div class="container p-30 bg py-5 mt-3 rounded shadow">
+  
+   
+    <h2 class="fw-bold text-center pt-4 ">LISTADO DE USUARIOS DEL SISTEMA</h2>
+   
+   
+<div class="row py-4">
+
+    <div class="col text-right">
+      <button routerLink="/register"
+              class="btn btn-primary">
+        <i class="fa fa-plus"></i>
+        Registrar Usuario
+      </button>
+    </div>
+  </div>
+ <!--  <div *ngIf="cargando"  
+     
+  class="alert alert-info text-center mt-3 animated fadeIn faster">
+<h4 class="alert-heading">Cargando</h4>
+<p>
+ <i class="fa fa-refresh fa-spin fa-2x"></i>
+</p>
+<p class="mb-0">
+ Espere por favor
+</p>
+
+</div>
+</div> -->
+  
+    <table *ngIf="!cargando && usuarios.length > 0" class="table">
+    
+      
+      <thead>
+        <tr>
+        
+          
+     
+          <th >Doctor</th>
+         
+          <th >Codigo</th>
+          
+          <th >Usuario</th>
+          <th>Rol</th>
+          <th >Estado</th>
+          
+          <th class="text-nowrap w100">Acciones</th>
+        </tr>
+      </thead>
+     
+      <tbody>
+        <tr  *ngFor="let usuario of usuarios">
+                  
+
+            <td>{{usuario.doctor}}</td>         
+            <td>{{usuario.codigo_doctor}}</td>
+            <td>{{usuario.usuario}}</td>
+     <!--    <td>{{usuario.rol}}</td>  -->
+            <td>
+              
+              <select  
+              class="form-select w100"
+              [(ngModel)]="usuario.rol"
+              (change)="(cambiarRole(usuario))"
+              >
+             
+            
+                <option  *ngFor="let rol of listaroles"  [value]="rol.rol">{{rol.rol}}</option>
+              </select>
+            </td>
+            <td> <span *ngIf="!usuario.estado "   class="rounded shadow  bg-pen">Inactivo</span>
+                <span *ngIf="usuario.estado" class="rounded shadow bg-com">Activo</span></td>
+            <td class="text-nowrap text-center">
+              <!--   <a data-toggle="tooltip" 
+                 data-original-title="Editar">
+                 <i class="fa fa-pencil-square-o fa-2x " aria-hidden="true"></i>
+
+                      </a> -->
+
+                <a data-toggle="tooltip" 
+                data-original-title="Borrar"
+                (click)="eliminarUsuario(usuario)"
+                class="cursor">
+                <i class="fa fa-trash-o fa-2x text-danger" aria-hidden="true"></i></a>
+            </td>
+         
+        </tr>
+       
+      
+      </tbody>
+     
+    </table>
+    <div *ngIf="cargando"  >
+     
+<div  class="alert alert-info text-center mt-3 animated fadeIn faster">
+<h4 class="alert-heading">Cargando</h4>
+<p>
+ <i class="fa fa-refresh fa-spin fa-2x"></i>
+</p>
+<p class="mb-0">
+ Espere por favor
+</p>
+
+</div>
+</div> 
+   <div class="paginacion">
+    <button (click)="cambinarPagina(-5)"  class="btn btn-primary btn--paginacion"><i class="fa fa-arrow-left" aria-hidden="true"></i> Anterior</button>
+    &nbsp;
+    <button (click)="cambinarPagina(5)" class="btn btn-primary btn--paginacion"> Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+   </div>
+ 
+<!--   <pre>
+  ESTADO {{buscarform.status}}
+  <br>
+  {{buscarform.valid}}
+  <br>
+  {{buscarform.value |json}}
+</pre>   -->
+<!-- 
+    <div *ngIf="!cargando "
+    class="alert alert-warning text-center mt-3 animated fadeIn faster">
+      <h1 class="alert-heading">No tiene ordenes con el doctor</h1>
+      <h5>Solicite la ayuda de un Administrador</h5>
+      <p>
+        <i class="fa fa-exclamation fa-2x"></i>
+      </p> 
+    </div> 
+
+    
+    -->
+
+
+
+  
+    
+

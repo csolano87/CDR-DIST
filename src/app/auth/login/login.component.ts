@@ -72,8 +72,8 @@ get PatientID1NoValido(){
  
   .subscribe(resp=>{
     Swal.close();
-    localStorage.setItem('doctor',this.loginforma.value.usuario);
-    this.router.navigateByUrl('/ordenes')
+   // localStorage.setItem('doctor',this.loginforma.value.usuario);
+    this.router.navigateByUrl('/');
   }, (err)=>{
     console.log('error',err.error.msg);
     Swal.fire({

@@ -1,8 +1,8 @@
-  <div class="container p-30 bg py-5 mt-3 rounded shadow">
-   
-    <h2 class="fw-bold text-center pt-4 ">Listado de Ordenes</h2>
+<div class="container p-30 bg py-5 mt-3 rounded shadow">
+
+    <h2 class="fw-bold text-center pt-4 ">CONSULTA DE ORDENES</h2>
         
-      <div class=" row justify-content-center">
+      <div class="row justify-content-center">
   
   <div class="col-md-12  ">
     <div class="card-body">
@@ -13,34 +13,48 @@
     id="buscarform"
   
    >
-      <div 
-      class="row">
+      <div class="row justify-content-center">
        
-        <div class="col-md-2"> 
+        <div class="col-md-3"> 
           <label for="" class="form-label">N. orden</label>
           <input type="text" class="form-control" placeholder="Ingrese orden" formControlName="SampleID" 
           [class.in-invalid]="SampleNoValido">
         </div>
       
-        <div class="col-md-2 ">
+        <div class="col-md-3 ">
           <label for="" class="form-label">Cédula</label>
           <input type="text" class="form-control" placeholder="Ingrese Cédula"  formControlName="PatientID2"
          [class.in-invalid]="cedulaNoValido"
           >
          
         </div>
-        <!-- > -->
-   
+        
+        <div class=" col-md-3 pt-5 p-5 form-check">
+          <input class="form-check-input" type="checkbox"
+          [disabled]="buscarform.valid"
+          formControlName="todos"  >
+          <label class="form-check-label" for="flexCheckDefault">
+           Ver Todas
+          </label>
+        </div>
 
-        <div class="col-md-4 pt-4 mt-2 ">
-        <button type="submit" class="btn btn-success rounded shadow"
+        
+
+
+
+
+        <div class="col-md-3 pt-4 mt-2 ">
+        <button type="submit" class="btn btn-primary rounded shadow"
        
         ><i class="fa fa-search" aria-hidden="true"></i> Buscar</button>
        </div> 
        </div>
        
 
-
+      
+     
+  
+      
 
     </form>
     </div>
@@ -48,7 +62,8 @@
   </div>
   
     </div>
-  
+
+   
   
     <table *ngIf="!cargando && listaordene.length > 0"  class="table">
     
@@ -61,8 +76,10 @@
           <th >Paciente</th>
          
           <th >Numero orden</th>
-          <th >Estado</th>
+          <th >Doctor</th>
           <th >F. Registro</th>
+          <th >Estado</th>
+
           <th>Actions</th>
         </tr>
       </thead>
@@ -73,10 +90,12 @@
           <td>{{lista.PatientID1}}</td>         
           <td>{{lista.SurNameAndName}}</td>
           <td>{{lista.SampleID}}</td>
+          <td>{{lista.Doctor}}</td>
+          <td>{{lista.RegisterDate}} {{lista.RegisterHour}}</td>
          <td> <span *ngIf="lista.IsOrderValidated !='true'"class="rounded shadow  bg-pen">Resultados Pendientes</span>
           <span *ngIf="lista.IsOrderValidated == 'true'" class="rounded shadow bg-com">Completo</span></td>
        
-          <td>{{lista.RegisterDate}} {{lista.RegisterHour}}</td>
+      
        
 
           <td> 
@@ -84,10 +103,10 @@
            
              
           </td>
-          <a href="" class="vv" *ngIf="listaordene.length > 0" (click)="buscarTodas(lista)">Ver todos</a>
+        
         </tr>
        
- 
+      
       </tbody>
      
     </table>
@@ -116,8 +135,3 @@
   </div>
   </div>
    
-
-
-
-  
-    

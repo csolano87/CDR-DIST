@@ -2,9 +2,9 @@ export class Usuario{
 
 
     constructor(
-      public id?:number,
-      public  nombre?: string,
-      public apellido?:string,
+      public id?:string,
+      public  doctor?: string,
+      public codigo_doctor?:string,
       public  usuario?:string,
       public  password?:string,
       public  password2?:string,

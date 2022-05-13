@@ -1,10 +1,11 @@
 export interface RegisterFrom{
 
-    cedula?: string;
-    nombre?:string;
+    doctor?: string;
+    codigo_doctor?:string;
     usuario?:string;
     password?: string;
     rol?:string;
+    estado?:boolean;
 
 
     

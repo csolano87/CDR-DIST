@@ -1,12 +1,14 @@
 .bg{
-    background-position: center center;
+  background: #fff;
    color: #ff8970;
-   background-color: #113b7a;
+
    text-align: center;
  
 
   
   }
+
+ 
 
 .bg img{
     display:block;
@@ -16,10 +18,14 @@
  
   }
   button{
-  background-color: #113b7a;
+  background-color: #0076B5;
  text-decoration: none;
 outline: none;
  border: none;
  cursor: pointer;
  display: inline-block;
+ font-size: 18px;
+ font-weight: bold;
   }
+
+ 

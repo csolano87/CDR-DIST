@@ -41,7 +41,14 @@ export class GetListService {
       delay(1500)
     )
   }
+  buscarTodos(lista : List){
 
+
+    return this.http.get<ListaOrdenes>(`http://localhost:9090/api/buscarordenes/${lista}`,this.headers)
+    .pipe(
+      delay(1500)
+    )
+  }
 
   pdf2(lista: List){
     console.log('estoy en el servicio.',lista)

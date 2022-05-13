@@ -1,25 +1,28 @@
 
-import { NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 
 import { RouterModule,Routes} from '@angular/router'
 import { AuthRoutingModule } from './auth/auth.routing';
-import { OrdenComponent } from './pages/mantenimientos/orden/orden.component';
+import { NofoundpageComponent } from './nofoundpage/nofoundpage/nofoundpage.component';
+import { PagesRoutingModule } from './pages/pages.routing';
 
-import { PagesModule } from './pages/pages.module';
-import { PagesRoutingModule } from './shared/header/pages.routing';
+
+
 
 
 
 const routes : Routes=[
-  //{path: '', redirectTo:'/nopagefound', pathMatch:'full'},
-  {path: 'ordenes', component:OrdenComponent, data:{titulo:'ordenes'}}
+
+  {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+ 
+  {path:'**', component: NofoundpageComponent}
   
   ];
 
 @NgModule({
 
   imports: [RouterModule.forRoot(routes),
- PagesRoutingModule,
+    PagesRoutingModule,
  AuthRoutingModule,
 
 

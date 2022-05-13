@@ -9,27 +9,40 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
-import { OrdenComponent } from './mantenimientos/orden/orden.component';
+
+import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
+//import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
 
 
 
 @NgModule({
   declarations: [
-      OrdenComponent,
+    
       PagesComponent,
       DashboardComponent,
       UsuariosComponent,
+  
+    OrdenesComponent
   ],
   
-  exports:[PagesComponent,OrdenComponent],
-  imports: [CommonModule,
+  exports:[
+    PagesComponent,
+   
+    UsuariosComponent,
+    DashboardComponent,
+ 
+
+  ],
+  imports: [
+    CommonModule,
     RouterModule,
     SharedModule,
     AuthModule,
     FormsModule,
-    RouterModule,
+   
     ReactiveFormsModule,
     HttpClientModule,
+    
     ]
   })
 export class PagesModule {}

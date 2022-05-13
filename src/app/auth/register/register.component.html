@@ -1,54 +1,76 @@
 <div class="container w-75 bg- mt-5 rounded shadow">
     <div class="row align-items-stretch">
+      
         <div class="col bg-white p-5 rounded-end">
+          <div class="row text-rigth">
+            <div class="col">
+              <button class="btn btn-primary "
+                      routerLink="/">
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+              </button>
+            </div>
+          </div>
             <!--    <div class="text-end">
                    <img src="./assets/LOGO BLUELAB-06.png" class="img-thumbnail" alt="">
                   </div>  -->
                <h3 class="fw-bold text-center py-3">Registro de usuarios</h3>
-        
+              
           <form 
           autocomplete="off"
           [formGroup]="registerform"
           (ngSubmit)="crearUsuario()"
           id="registerform">
    
-          <div class="mb-2">
-         
-           <label class="form-label">Medico</label>
-           <select name="" class="form-control"
+          <div class=" mb-4">
            
-           name="nombre"
-                [disabled]="listadoctor.length ===  0"
+            <label class="form-label">Rol</label>
+            <select class="form-select"
          
-           required
-           formControlName="usuario"
-           [class.is-invalid]="usuarioNoValido">
+             
+             formControlName="rol"
+             [class.is-invalid]="rolNoValido">
+            <option value="">-Seleccione-</option>
+             <option *ngFor="let rol of listaroles" [value]="rol.rol">{{rol.rol}}</option>
+            </select>
+           </div>
+           <small *ngIf="rolNoValido"class="text-danger">Rol</small>
 
-           
+          
+
+          <div class="mb-2">
+         <!--    ngValue="{{lista.ValueCode}} {{lista.Description}}">{{lista.Description}}</option>  -->
+           <label class="form-label" >Doctor</label>
+           <select name="" class="form-select"
+       
+           formControlName="doctor"
+           [class.is-invalid]="doctorNoValido">
+           >
+           <option value="">- Seleccione -</option>
                <option *ngFor="let lista of listadoctor"
-              [value]="lista.ValueCode">{{lista.Description}}</option> 
-                  
+              
+               value="{{lista.ValueCode}} {{lista.Description}}">{{lista.Description}}</option> 
            </select> 
+
           </div> 
-          <small *ngIf="usuarioNoValido"class="text-danger">Escoge una opcion</small>
+          <small *ngIf="doctorNoValido"class="text-danger">Escoge una opcion</small>
           <div class="row">
               
            <div class="mb-2">
                <label class="form-label">Usuario</label>
                <input class="form-control" type="text"
-               formControlName="nombre"
+               formControlName="usuario"
+            
                placeholder="Ingrese un nombre de usuario"
-               [class.is-invalid]="nombreNoValido"
-               >
+               [class.is-invalid]="usuarioNoValido">
                
            </div>
-           <small *ngIf="nombreNoValido"class="text-danger">Ingrese un caracter</small>
-          <!--  <div class="col-md-6 mb-2">
-            <label class="form-label">Apellido</label>
-            <input class="form-control" type="text">
-           </div> -->
+           <small *ngIf="usuarioNoValido"class="text-danger">Ingrese un caracter</small>
+        
           </div>
            
+
+          
                  
               <div class=" mb-2">
                <label class="form-label">Password</label>
@@ -68,34 +90,18 @@
               </div>
               <small *ngIf="password2NoValido"class="text-danger"> Las contrasena no son iguales</small>
              
-              <div class=" mb-4">
-               <label class="form-label">Rol</label>
-               <input class="form-control" type="text"
-               formControlName="rol"
-               [class.is-invalid]="rolNoValido">
-
-               
-              </div>
-              <small *ngIf="rolNoValido"class="text-danger">Rol</small>
- 
-             <!--  <div class="col-md-2">
-                <input  formControlName="DemographicName" class="form-check-input" type="checkbox"
-                [class.is-invalid]="DemographicNameNoValido" >
-                <label class="form-check-label" >
-                   Todas
-                </label>
-              </div>  -->
+          
               <div class="d-grid">
-                  <button type="submit" class="btn btn-primary">Guardar</button>
+                  <button type="submit" class="btn btn-primary"> <i class="fa fa-save"></i> Guardar</button>
               </div>
           </form>
        </div>
         <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
-            <img src="./assets/persona ressgistroazul.png" class="img-fluid" width="400" height="400"> 
+            <img src="./assets/persona ressgistro2-01.png" class="img-fluid" width="500" height="500"> 
           </div>
    
 </div>
-
+<!-- 
 <hr>
 <pre>
     Estado del formulario: {{ registerform.valid }}
@@ -106,4 +112,4 @@
 
     {{ registerform.value | json }}
   
-  </pre>
+  </pre> -->

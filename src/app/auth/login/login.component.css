@@ -18,9 +18,10 @@ button {
   } */
 
   .bg{
-    background-position: center center;
+
    color: #ff8970;
-   background-color: #113b7a;
+  background: #fff;
+ /*  background-image: linear-gradient(blue),url(); */
    text-align: center;
  
 
@@ -41,4 +42,9 @@ outline: none;
  border: none;
  cursor: pointer;
  display: inline-block;
+  }
+
+  .img-thumbnail{
+    border: none;
+    
   }

@@ -2,27 +2,51 @@
 
 
 
-  
+<div id="main-wrapper">
+
   <app-header></app-header>
 
+  <app-sidebar></app-sidebar>
 
-            <router-outlet></router-outlet> 
-    
- <!-- 
-          <section class="home-section">
-            <div class="home-content">
-              <i class='bx bx-menu' ></i>
-              <app-breadcrums></app-breadcrums>
-             
-            </div>
-          </section> -->
-    
-          
-      
-       <!--   <footer class="pie-pagina mt-5">
-               
-            <div class="grupo-2">
-                <small>&copy; 2022 <b>CDR</b> - Todos los Derechos Reservados  | Designed & Developed By Christian Solano</small>
-            </div>
-            </footer> -->
- 
+  <div class="page-wrapper">
+      <div class="container-fluid">
+          <!-- Breadcrumbs -->
+        <app-breadcrums></app-breadcrums>
+
+          <!-- Mi sistema de rutas -->
+        <router-outlet></router-outlet>
+
+          <!-- 
+          <div class="row">
+              <div class="col-12">
+                  <div class="card">
+                      <div class="card-body">
+                          
+                      </div>
+                  </div>
+              </div>
+          </div> 
+          -->
+
+      </div>
+
+      <!-- ============================================================== -->
+      <!-- footer -->
+      <!-- ============================================================== -->
+      <footer class="pie-pagina">
+           
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>CDR</b> - Todos los Derechos Reservados  | Designed & Developed By Christian Solano</small>
+        </div>
+        </footer>
+      <!-- ============================================================== -->
+      <!-- End footer -->
+      <!-- ============================================================== -->
+
+  </div>
+
+
+</div>
+
+
+
