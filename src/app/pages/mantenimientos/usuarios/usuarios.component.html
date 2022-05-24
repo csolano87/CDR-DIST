@@ -7,7 +7,7 @@
 <div class="row py-4">
 
     <div class="col text-right">
-      <button routerLink="/register"
+      <button [routerLink]="['/dashboard/usuarios/nuevo']"
               class="btn btn-primary">
         <i class="fa fa-plus"></i>
         Registrar Usuario
@@ -71,11 +71,11 @@
             <td> <span *ngIf="!usuario.estado "   class="rounded shadow  bg-pen">Inactivo</span>
                 <span *ngIf="usuario.estado" class="rounded shadow bg-com">Activo</span></td>
             <td class="text-nowrap text-center">
-              <!--   <a data-toggle="tooltip" 
+                <a [routerLink]="['/dashboard','usuarios',usuario.id]" data-toggle="tooltip" 
                  data-original-title="Editar">
                  <i class="fa fa-pencil-square-o fa-2x " aria-hidden="true"></i>
 
-                      </a> -->
+                      </a> 
 
                 <a data-toggle="tooltip" 
                 data-original-title="Borrar"

@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { ListaOrdenes } from '../interfaces/ordenes.interface';
 import { Lista } from '../models/doctor.module';
 import { List } from '../models/listagetlist.module';
 
 //import { ListaOrdenes } from '../interfaces/ordenes.interface';
 
-
+const baseUrl=environment.url;
 @Injectable({
   providedIn: 'root'
 })
@@ -36,7 +37,7 @@ export class GetListService {
   buscarPacientes(forma:ListaOrdenes){
 
 
-    return this.http.post<ListaOrdenes>('http://localhost:9090/api/buscarordenes',forma,this.headers)
+    return this.http.post<ListaOrdenes>(`${baseUrl}/buscarordenes`,forma,this.headers)
     .pipe(
       delay(1500)
     )

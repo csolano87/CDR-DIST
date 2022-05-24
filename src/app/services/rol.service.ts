@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { cargarRol } from '../interfaces/cargarRol.interface';
-
+const baseUrl=environment.url;
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,7 @@ export class RolService {
     private http:HttpClient) { }
 
     getRol(){
-  return this.http.get<cargarRol>('http://localhost:9090/api/roles')
+  return this.http.get<cargarRol>(`${baseUrl}/roles`)
   .pipe(
     map(resp=>
       resp.rol.map(

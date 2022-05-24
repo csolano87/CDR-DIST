@@ -9,6 +9,7 @@ import { UsuariosComponent } from "./mantenimientos/usuarios/usuarios.component"
 
 
 import { PagesComponent } from "./pages.component";
+import { UsuarioComponent } from "./mantenimientos/usuarios/usuario/usuario.component";
 
 
 
@@ -19,11 +20,11 @@ const routes: Routes = [
     {
         path:'dashboard',
          component:PagesComponent,
-        canActivate:[AuthGuard],
+       canActivate:[AuthGuard],
          children:[
          {path:'', component: DashboardComponent },
          {path: 'usuarios',  component: UsuariosComponent},
-         //{path: 'orden',  component: OrdenesComponent},
+         {path: 'usuarios/:id',  component: UsuarioComponent},
         {path: 'ordenes',  component: OrdenesComponent},
       //   {path:'', redirectTo:'/dashboard', pathMatch:'full'}
      ]

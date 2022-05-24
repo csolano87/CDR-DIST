@@ -1,0 +1,10 @@
+.text{
+    width: 100%;
+    height: 80vh;
+
+}
+
+.img__text{
+    text-align: center;
+line-height: 80vh;
+}

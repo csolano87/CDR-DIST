@@ -1,17 +1,19 @@
-<!-- <div class="container w-75 bg- mt-5 rounded shadow">
+<div class="container w-75 bg- mt-5 rounded shadow">
     <div class="row align-items-stretch">
       
         <div class="col bg-white p-5 rounded-end">
           <div class="row text-rigth">
             <div class="col">
               <button class="btn btn-primary "
-                      routerLink="/">
+                      routerLink="/dashboard/usuarios">
                 <i class="fa fa-arrow-left"></i>
                 Regresar
               </button>
             </div>
           </div>
-           
+            <!--    <div class="text-end">
+                   <img src="./assets/LOGO BLUELAB-06.png" class="img-thumbnail" alt="">
+                  </div>  -->
                <h3 class="fw-bold text-center py-3">Registro de usuarios</h3>
               
           <form 
@@ -23,22 +25,43 @@
         
           
 
-          <div class="mb-2">
-       
+         <!--  <div class="mb-4">
+     
            <label class="form-label" >Doctor</label>
-           <select name="" class="form-select"
+           <select class="form-select"
        
            formControlName="doctor"
            [class.is-invalid]="doctorNoValido">
            
-           <option value="">- Seleccione -</option>
-               <option *ngFor="let lista of listadoctor"
-              
-               value="{{lista.ValueCode}} {{lista.Description}}">{{lista.Description}}</option> 
+           <option value="">-Seleccione </option>
+     
+             <option *ngFor="let lista of listadoctor"  [value]="lista.Description">{{lista.Description}}</option>  
            </select> 
 
           </div> 
+          <small *ngIf="doctorNoValido"class="text-danger">Escoge una opcion</small> -->
+
+
+          <div class="mb-4">
+            <label class="form-label">Doctor</label>
+
+            <select name="" class="form-select"
+          
+            formControlName="doctor"
+            [class.is-invalid]="doctorNoValido">
+            <option value="">-Seleccione </option>
+       
+            <option *ngFor="let lista of listadoctor" 
+             value="{{lista.ValueCode}} {{lista.Description}}" >{{lista.Description}}</option>  
+            </select>
+           
+           
+          </div>
+
           <small *ngIf="doctorNoValido"class="text-danger">Escoge una opcion</small>
+
+
+
           <div class="row">
               
            <div class="mb-2">
@@ -97,8 +120,30 @@
           </form>
        </div>
         <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
-            <img src="./assets/persona ressgistro2-01.png" class="img-fluid" width="500" height="500"> 
+          <!--   <img src="./assets/persona ressgistro2-01.png" class="img-fluid" width="500" height="500">  -->
+<!-- 
+            <pre>
+              Estado del formulario: {{ registerform.valid }}
+              <br>
+              status:{{registerform.status}}
+          </pre>
+          <pre>
+          
+              {{ registerform.value | json }}
+            
+            </pre> -->
           </div>
    
 </div>
- -->
+
+<!--  <hr>
+<pre>
+    Estado del formulario: {{ registerform.valid }}
+    <br>
+    status:{{registerform.status}}
+</pre>
+<pre>
+
+    {{ registerform.value | json }}
+  
+  </pre>   -->

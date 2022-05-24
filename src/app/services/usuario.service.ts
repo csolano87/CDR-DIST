@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { catchError, map, Observable, of, tap } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environment } from 'src/environments/environment';
+
 import { CargarUsuario } from '../interfaces/cargarUsuarios';
 import { LoginFrom } from '../interfaces/login-form.interfaces';
 import { RegisterFrom } from '../interfaces/register-form.interface';
@@ -11,7 +12,7 @@ import { List } from '../models/listagetlist.module';
 
 
 import { Usuario } from '../models/usuario.module';
-
+const baseUrl=environment.url;
 @Injectable({
   providedIn: 'root'
 })
@@ -34,7 +35,7 @@ get id():string{
 }
 validarToken():Observable<boolean>{
   const token=localStorage.getItem('token')||'';
- return this.http.get('http://localhost:9090/api/auth/renew',{headers:{
+ return this.http.get(`${baseUrl}/auth/renew`,{headers:{
     'x-token':token
   }
 }).pipe(
@@ -53,7 +54,7 @@ validarToken():Observable<boolean>{
 
 
 login(List: List){
-  return this.http.post('http://localhost:9090/api/auth/login',List)
+  return this.http.post(`${baseUrl}/auth/login`,List)
   .pipe(
     tap((resp:any)=>{
    
@@ -64,7 +65,7 @@ login(List: List){
 } 
 
 cargarUsuarios(formData:RegisterFrom){
-  return this.http.post(`${environment.url}/usuarios`,formData,this.headers)
+  return this.http.post(`${baseUrl}/usuarios`,formData,this.headers)
 }
 
 /* private guardarToken(idToken:string){
@@ -80,24 +81,31 @@ logout(){
 
 
 GetUsuarios(desde: number = 0){
-  return this.http.get<CargarUsuario>(`${environment.url}/usuarios?desde=${desde}`,this.headers)
+  return this.http.get<CargarUsuario>(`${baseUrl}/usuarios?desde=${desde}`,this.headers)
 
   
 }
 
 
+GetUsuarioById(id:string){
 
+
+  return this.http.get(`${baseUrl}/usuarios/${id}`,this.headers)
+  .pipe(
+    map((resp:{ok:boolean,user:Usuario})=>resp.user)
+  )
+}
 
 
 
 
 eliminarUsuario(usuario:Usuario){
-  return this.http.delete(`http://localhost:9090/api/usuarios/${usuario.id}`,this.headers)
+  return this.http.delete(`${baseUrl}/usuarios/${usuario.id}`,this.headers)
 
  }
 
  cambiarRole(usuario:Usuario){
-   return this.http.put(`http://localhost:9090/api/usuarios/${usuario.id}`,usuario,this.headers)
+   return this.http.put(`${baseUrl}/usuarios/${usuario.id}`,usuario,this.headers)
  }
 
 }

@@ -11,6 +11,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 
 import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
+import { UsuarioComponent } from './mantenimientos/usuarios/usuario/usuario.component';
 //import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
 
 
@@ -22,7 +23,8 @@ import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
       DashboardComponent,
       UsuariosComponent,
   
-    OrdenesComponent
+    OrdenesComponent,
+        UsuarioComponent
   ],
   
   exports:[

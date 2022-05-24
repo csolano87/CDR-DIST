@@ -1,4 +1,4 @@
-import { ThisReceiver } from '@angular/compiler';
+/* import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Lista } from 'src/app/models/doctor.module';
@@ -37,12 +37,10 @@ return this.registerform?.get('usuario')!.invalid && this.registerform?.get('usu
                const password2=this.registerform.get('password2').value
 
                return (password === password2)? false:true;
-      //  return this.registerform?.get('password')!.invalid && this.registerform?.get('password')!.touched
+    
           }
       
-         /*  get codigoNoValido(){
-            return this.registerform?.get('codigo_doctor')!.invalid && this.registerform?.get('codigo_doctor')!.touched
-              } */
+       
           get rolNoValido(){
            
             return this.registerform?.get('rol')!.invalid && this.registerform?.get('rol')!.touched
@@ -66,10 +64,7 @@ listadoctor:Lista[]=[]
      .subscribe(resp=>{
        console.log(resp)
        this.listaroles=resp;
-       /*  this.listaroles.unshift({
-        rol: '[Seleccione Usuario]',
-        id: ''
-        })  */
+     
      })
 
 
@@ -83,10 +78,7 @@ listadoctor:Lista[]=[]
     .subscribe(resp=>{
       
 this.listadoctor=resp;
-/*   this.listadoctor.unshift({
-Description: 'Seleccione Usuario',
-ValueCode: 'null'
-})   */ 
+
 console.log(this.listadoctor)
     })
   } 
@@ -109,7 +101,7 @@ console.log(this.listadoctor)
   }
   crearUsuario(){
 console.log(this.registerform.value)
-/*  if (this.registerform.invalid) {
+  if (this.registerform.invalid) {
   return Object.values(this.registerform.controls)
   .forEach(control=>{control.markAllAsTouched()});
 }
@@ -137,7 +129,7 @@ this.usuarioservices.cargarUsuarios(this.registerform.value)
     title:'Error al autenticar',
     text:(err.error.msg)
   });
-});    */
+});   
   }
 
 
@@ -148,3 +140,4 @@ this.usuarioservices.cargarUsuarios(this.registerform.value)
   
  
 }
+ */
