@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { catchError, map, Observable, of, tap } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
+//import { environment } from 'src/environments/environment';
 
 import { CargarUsuario } from '../interfaces/cargarUsuarios';
 import { LoginFrom } from '../interfaces/login-form.interfaces';
@@ -13,6 +14,7 @@ import { List } from '../models/listagetlist.module';
 
 import { Usuario } from '../models/usuario.module';
 const baseUrl=environment.url;
+
 @Injectable({
   providedIn: 'root'
 })
@@ -96,7 +98,9 @@ GetUsuarioById(id:string){
   )
 }
 
-
+actualizarPerfil(usuario :Usuario){
+  return this.http.put(`${baseUrl}/usuarios/${usuario.id}`,usuario,this.headers)
+}
 
 
 eliminarUsuario(usuario:Usuario){

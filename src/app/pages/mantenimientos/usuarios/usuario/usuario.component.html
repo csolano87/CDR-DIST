@@ -52,7 +52,7 @@
             <option value="">-Seleccione </option>
        
             <option *ngFor="let lista of listadoctor" 
-             value="{{lista.ValueCode}} {{lista.Description}}" >{{lista.Description}}</option>  
+             [value]="lista" >{{lista.Description}}</option>  
             </select>
            
            
@@ -121,8 +121,8 @@
        </div>
         <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
           <!--   <img src="./assets/persona ressgistro2-01.png" class="img-fluid" width="500" height="500">  -->
-<!-- 
-            <pre>
+
+         <!--    <pre>
               Estado del formulario: {{ registerform.valid }}
               <br>
               status:{{registerform.status}}
@@ -131,7 +131,7 @@
           
               {{ registerform.value | json }}
             
-            </pre> -->
+            </pre>  -->
           </div>
    
 </div>

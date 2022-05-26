@@ -12,6 +12,7 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
 
 import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
 import { UsuarioComponent } from './mantenimientos/usuarios/usuario/usuario.component';
+import { PerfilComponent } from './mantenimientos/perfil/perfil.component';
 //import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
 
 
@@ -24,7 +25,8 @@ import { UsuarioComponent } from './mantenimientos/usuarios/usuario/usuario.comp
       UsuariosComponent,
   
     OrdenesComponent,
-        UsuarioComponent
+        UsuarioComponent,
+        PerfilComponent
   ],
   
   exports:[

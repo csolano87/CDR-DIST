@@ -16,11 +16,13 @@ import { CustompipePipe } from './custompipe.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NofoundpageComponent,
     CustompipePipe,
+   
 
   ],
   imports: [

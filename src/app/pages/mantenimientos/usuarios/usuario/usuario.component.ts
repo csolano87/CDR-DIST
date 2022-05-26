@@ -58,9 +58,9 @@ listadoctor:Lista[]=[]
 
  ngAfterViewInit(): void{
    
-  this.activatedRoute.params
+  /* this.activatedRoute.params
   .subscribe(({id})=> this.cargarUsuario(id));
-
+ */
 
 
     
@@ -82,9 +82,7 @@ listadoctor:Lista[]=[]
 
 cargarUsuario(id:string){
 
-  if (id === 'nuevo') {
-    return;
-  }
+
 this.usuarioservices.GetUsuarioById(id)
 .subscribe (user =>{
 /* 
@@ -125,12 +123,12 @@ this.usuarios=user;
 console.log(this.registerform.value)
 if (this.usuarios) {
 
-} else {
+}  else { 
 /*   if (this.registerform.invalid) {
     return Object.values(this.registerform.controls)
     .forEach(control=>{control.markAllAsTouched()});
   } */
-  Swal.fire({
+   Swal.fire({
     allowOutsideClick:false,
   
     icon:'info',
@@ -155,7 +153,7 @@ if (this.usuarios) {
       text:(err.error.msg)
     });
   });   
-    }
+    } 
 }
 
  /*  */

@@ -23,18 +23,16 @@ return this.http.get<cargaGetlistdoctor>(`${baseUrl}/doctor`)
  .pipe(
   
   map(resp=>
-      resp.lista.map(resp=>( 
-        {  
-          //msdataRowOrder:resp.msdataRowOrder,
-          ID:resp.ID,
-          //DemographicCode:resp.DemographicCode,
-         // DemographicName:resp.DemographicName,
+      resp.lista.map(
+        resp=>({   
+       
+          ID:resp.ID,          
           Description:resp.Description,
           ValueCode:resp.ValueCode,
           Status:resp.Status})
 )  
   )
-); 
+)
 }
 
 }

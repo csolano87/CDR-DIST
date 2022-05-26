@@ -4,12 +4,13 @@ import { AuthGuard } from "../guards/auth.guard";
 import { OrdenesComponent } from "./mantenimientos/ordenes/ordenes.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 
-//import { OrdenesComponent } from "./mantenimientos/ordenes/ordenes.component";
+
 import { UsuariosComponent } from "./mantenimientos/usuarios/usuarios.component";
 
 
 import { PagesComponent } from "./pages.component";
 import { UsuarioComponent } from "./mantenimientos/usuarios/usuario/usuario.component";
+import { PerfilComponent } from "./mantenimientos/perfil/perfil.component";
 
 
 
@@ -24,8 +25,10 @@ const routes: Routes = [
          children:[
          {path:'', component: DashboardComponent },
          {path: 'usuarios',  component: UsuariosComponent},
-         {path: 'usuarios/:id',  component: UsuarioComponent},
+         {path: 'usuario',  component: UsuarioComponent},
+         {path: 'perfil/:id',  component: PerfilComponent},
         {path: 'ordenes',  component: OrdenesComponent},
+      //  {path: 'perfil/:id',  component: PerfilComponent},
       //   {path:'', redirectTo:'/dashboard', pathMatch:'full'}
      ]
   },

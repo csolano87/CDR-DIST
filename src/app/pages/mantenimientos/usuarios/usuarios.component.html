@@ -7,7 +7,7 @@
 <div class="row py-4">
 
     <div class="col text-right">
-      <button [routerLink]="['/dashboard/usuarios/nuevo']"
+      <button [routerLink]="['/dashboard/usuario']"
               class="btn btn-primary">
         <i class="fa fa-plus"></i>
         Registrar Usuario
@@ -55,8 +55,8 @@
             <td>{{usuario.doctor}}</td>         
             <td>{{usuario.codigo_doctor}}</td>
             <td>{{usuario.usuario}}</td>
-     <!--    <td>{{usuario.rol}}</td>  -->
-            <td>
+       <td>{{usuario.rol}}</td>  
+            <!-- <td>
               
               <select  
               class="form-select w100"
@@ -67,11 +67,11 @@
             
                 <option  *ngFor="let rol of listaroles"  [value]="rol.rol">{{rol.rol}}</option>
               </select>
-            </td>
+            </td> -->
             <td> <span *ngIf="!usuario.estado "   class="rounded shadow  bg-pen">Inactivo</span>
                 <span *ngIf="usuario.estado" class="rounded shadow bg-com">Activo</span></td>
             <td class="text-nowrap text-center">
-                <a [routerLink]="['/dashboard','usuarios',usuario.id]" data-toggle="tooltip" 
+                <a [routerLink]="['/dashboard','perfil',usuario.id]" data-toggle="tooltip" 
                  data-original-title="Editar">
                  <i class="fa fa-pencil-square-o fa-2x " aria-hidden="true"></i>
 
