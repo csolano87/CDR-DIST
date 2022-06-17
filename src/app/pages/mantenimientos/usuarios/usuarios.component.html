@@ -1,14 +1,14 @@
-<div class="container p-30 bg py-5 mt-3 rounded shadow">
+<div class="container rounded shadow">
   
    
-    <h2 class="fw-bold text-center pt-4 ">LISTADO DE USUARIOS DEL SISTEMA</h2>
+    <h2 class="fw-bold text-center pt-4 ">Listado de usuarios del sistema</h2>
    
    
 <div class="row py-4">
 
     <div class="col text-right">
       <button [routerLink]="['/dashboard/usuario']"
-              class="btn btn-primary">
+              class="btn btn-secondary">
         <i class="fa fa-plus"></i>
         Registrar Usuario
       </button>
@@ -35,12 +35,12 @@
         <tr>
         
           
-     
-          <th >Doctor</th>
-         
-          <th >Codigo</th>
-          
           <th >Usuario</th>
+          <th >Nombre</th>
+         
+          <th >Código</th>
+          
+        
           <th>Rol</th>
           <th >Estado</th>
           
@@ -50,11 +50,10 @@
      
       <tbody>
         <tr  *ngFor="let usuario of usuarios">
-                  
-
+          <td>{{usuario.usuario}}</td>
             <td>{{usuario.doctor}}</td>         
             <td>{{usuario.codigo_doctor}}</td>
-            <td>{{usuario.usuario}}</td>
+           
        <td>{{usuario.rol}}</td>  
             <!-- <td>
               
@@ -81,7 +80,7 @@
                 data-original-title="Borrar"
                 (click)="eliminarUsuario(usuario)"
                 class="cursor">
-                <i class="fa fa-trash-o fa-2x text-danger" aria-hidden="true"></i></a>
+                <i class="fa fa-user-times fa-2x text-danger" aria-hidden="true"></i></a>
             </td>
          
         </tr>
@@ -104,30 +103,12 @@
 </div>
 </div> 
    <div class="paginacion">
-    <button (click)="cambinarPagina(-5)"  class="btn btn-primary btn--paginacion"><i class="fa fa-arrow-left" aria-hidden="true"></i> Anterior</button>
+    <button (click)="cambinarPagina(-10)"  class="btn btn-secondary btn--paginacion"><i class="fa fa-arrow-left" aria-hidden="true"></i> Anterior</button>
     &nbsp;
-    <button (click)="cambinarPagina(5)" class="btn btn-primary btn--paginacion"> Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+    <button (click)="cambinarPagina(10)" class="btn btn-secondary btn--paginacion"> Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
    </div>
  
-<!--   <pre>
-  ESTADO {{buscarform.status}}
-  <br>
-  {{buscarform.valid}}
-  <br>
-  {{buscarform.value |json}}
-</pre>   -->
-<!-- 
-    <div *ngIf="!cargando "
-    class="alert alert-warning text-center mt-3 animated fadeIn faster">
-      <h1 class="alert-heading">No tiene ordenes con el doctor</h1>
-      <h5>Solicite la ayuda de un Administrador</h5>
-      <p>
-        <i class="fa fa-exclamation fa-2x"></i>
-      </p> 
-    </div> 
 
-    
-    -->
 
 
 

@@ -36,14 +36,17 @@ button {
  
   }
   button{
-  background-color: #113b7a;
+  background-color: #353535;
  text-decoration: none;
 outline: none;
  border: none;
  cursor: pointer;
  display: inline-block;
-  }
 
+  }
+button:hover{
+  background-color: #807f7f;
+}
   .img-thumbnail{
     border: none;
     

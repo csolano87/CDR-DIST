@@ -1,137 +1,137 @@
-<div class="container p-30 bg py-5 mt-3 rounded shadow">
+<div class="container p-30 bg py-3  rounded shadow">
 
-    <h2 class="fw-bold text-center pt-4 ">CONSULTA DE ORDENES</h2>
-        
-      <div class="row justify-content-center">
-  
-  <div class="col-md-12  ">
-    <div class="card-body">
-    <form 
-    autocomplete="off"
-    [formGroup]="buscarform"
-    (ngSubmit)="buscar()" 
-    id="buscarform"
-  
-   >
-      <div class="row justify-content-center">
-       
-        <div class="col-md-3"> 
-          <label for="" class="form-label">N. orden</label>
-          <input type="text" class="form-control" placeholder="Ingrese orden" formControlName="SampleID" 
-          [class.in-invalid]="SampleNoValido">
-        </div>
-      
-        <div class="col-md-3 ">
-          <label for="" class="form-label">Cédula</label>
-          <input type="text" class="form-control" placeholder="Ingrese Cédula"  formControlName="PatientID2"
-         [class.in-invalid]="cedulaNoValido"
-          >
-         
-        </div>
-        
-        <div class=" col-md-3 pt-5 p-5 form-check">
-          <input class="form-check-input" type="checkbox"
-          [disabled]="buscarform.valid"
-          formControlName="todos"  >
-          <label class="form-check-label" for="flexCheckDefault">
-           Ver Todas
-          </label>
-        </div>
+  <h2 class="fw-bold text-center pt-4 ">Consulta de ordenes</h2>
 
-        
+  <div class="row justify-content-center">
+
+    <div class="col-md-12  ">
+      <div class="card-body">
+        <form autocomplete="off" [formGroup]="buscarform" (ngSubmit)="buscar()" id="buscarform">
+          <div class="row justify-content-center">
+
+            <div class="col-md-3">
+              <label for="" class="form-label">Número de  orden</label>
+              <input type="text" class="form-control" placeholder="Ingrese orden" formControlName="SampleID"
+                [class.in-invalid]="SampleNoValido">
+            </div>
+
+            <div class="col-md-3 ">
+              <label for="" class="form-label">Cédula</label>
+              <input type="text" class="form-control" placeholder="Ingrese Cédula" formControlName="PatientID2"
+                [class.in-invalid]="cedulaNoValido">
+
+            </div>
+
+            <div class=" col-md-3 pt-5 p-5 form-check">
+              <input class="form-check-input" type="checkbox" [disabled]="buscarform.valid" formControlName="todos">
+              <label class="form-check-label" for="flexCheckDefault">
+                Ver Todas
+              </label>
+            </div>
 
 
 
 
-        <div class="col-md-3 pt-4 mt-2 ">
-        <button type="submit" class="btn btn-primary rounded shadow"
-       
-        ><i class="fa fa-search" aria-hidden="true"></i> Buscar</button>
-       </div> 
-       </div>
-       
 
-      
-     
-  
-      
 
-    </form>
+            <div class="col-md-3 pt-4 mt-2 ">
+              <button type="submit" class="btn btn-secondary rounded shadow"><i class="fa fa-search"
+                  aria-hidden="true"></i> Buscar</button>
+            </div>
+          </div>
+
+
+
+
+
+
+
+        </form>
+      </div>
+
     </div>
-   
+
   </div>
-  
-    </div>
 
+
+
+
+  <table *ngIf="!cargando && listaordene.length > 0" class="table">
+
+
+    <thead>
+      <tr>
+
+
+        <th>Cédula</th>
+        <th>Paciente</th>
+
+        <th>Número orden</th>
+        <th>Doctor</th>
+        <th>Fecha Registro</th>
+        <th>Estado</th>
+
+        <th>PDF</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let lista of listaordene | filtro:page">
+
+        <td>{{lista.PatientID1}}</td>
+        <td>{{lista.SurNameAndName}}</td>
+        <td>{{lista.SampleID}}</td>
+        <td>{{lista.Doctor}}</td>
+        <td>{{lista.RegisterDate}} {{lista.RegisterHour}}</td>
+        <td> <span *ngIf="lista.IsOrderValidated !='true'" class="rounded shadow  bg-pen">Resultados Pendientes</span>
+          <span *ngIf="lista.IsOrderValidated == 'true'" class="rounded shadow bg-com">Completo</span>
+        </td>
+
+
+
+
+        <td>
+          <span class=" rounded shadow cursor" (click)="pdf2(lista)"><i class="fa fa-file-pdf-o fa-2x"></i></span>
+
+
+        </td>
+
+      </tr>
+
+
+    </tbody>
    
-  
-    <table *ngIf="!cargando && listaordene.length > 0"  class="table">
+  </table>
+  <div *ngIf="listaordene.length > 0" class="paginacion">
+    <button (click)="prevPage()" class="btn btn-secondary btn--paginacion"><i class="fa fa-arrow-left" aria-hidden="true"></i> Anterior</button>
+    &nbsp;
+
     
-      
-      <thead>
-        <tr>
-        
-          
-          <th >Cedula</th>
-          <th >Paciente</th>
-         
-          <th >Numero orden</th>
-          <th >Doctor</th>
-          <th >F. Registro</th>
-          <th >Estado</th>
-
-          <th>Actions</th>
-        </tr>
-      </thead>
-     
-      <tbody>
-        <tr *ngFor="let lista of listaordene">
-          
-          <td>{{lista.PatientID1}}</td>         
-          <td>{{lista.SurNameAndName}}</td>
-          <td>{{lista.SampleID}}</td>
-          <td>{{lista.Doctor}}</td>
-          <td>{{lista.RegisterDate}} {{lista.RegisterHour}}</td>
-         <td> <span *ngIf="lista.IsOrderValidated !='true'"class="rounded shadow  bg-pen">Resultados Pendientes</span>
-          <span *ngIf="lista.IsOrderValidated == 'true'" class="rounded shadow bg-com">Completo</span></td>
-       
-      
-       
-
-          <td> 
-             <span class=" rounded shadow cursor"(click)="pdf2(lista)"><i class="fa fa-file-pdf-o fa-2x"></i></span>
-           
-             
-          </td>
-        
-        </tr>
-       
-      
-      </tbody>
-     
-    </table>
+    <button (click)="nextPage()" [disabled]="( listaordene | filtro:page).length === 0"  class="btn btn-secondary btn--paginacion"> Siguiente <i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+   </div>
+ 
 
 
-    <div *ngIf="!cargando && !listaordene"
-    class="alert alert-warning text-center mt-3 animated fadeIn faster">
-      <h1 class="alert-heading">No tiene ordenes con el doctor</h1>
-      <h5>Solicite la ayuda de un Administrador</h5>
-      <p>
-        <i class="fa fa-exclamation fa-2x"></i>
-      </p> 
-    </div> 
+  <div *ngIf="!cargando && !listaordene " class="alert alert-warning text-center mt-3 animated fadeIn faster">
+    <h1 class="alert-heading">No tiene ordenes con el doctor</h1>
+    <h5>Solicite la ayuda de un Administrador</h5>
+    <p>
+      <i class="fa fa-exclamation fa-2x"></i>
+    </p>
+  </div>
 
-    <div *ngIf="cargando"  
-     
-     class="alert alert-info text-center mt-3 animated fadeIn faster">
-  <h4 class="alert-heading">Cargando</h4>
-  <p>
-    <i class="fa fa-refresh fa-spin fa-2x"></i>
-  </p>
-  <p class="mb-0">
-    Espere por favor
-  </p>
+  <div *ngIf="cargando" class="alert alert-info text-center mt-3 animated fadeIn faster">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+      <i class="fa fa-refresh fa-spin fa-2x"></i>
+    </p>
+    <p class="mb-0">
+      Espere por favor
+    </p>
 
   </div>
-  </div>
-   
+</div>
+
+
+
+

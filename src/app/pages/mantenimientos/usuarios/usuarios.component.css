@@ -1,4 +1,9 @@
-
+.container{
+  min-height: 700px;
+ margin-top: 10px;
+ padding: 20px;
+ margin-bottom: 20px;
+}
 .w100{
     width:140px ;
  text-align: center; margin: 0 auto;
@@ -12,7 +17,7 @@
 .btn{
   color: #fff;
   font-weight: bold;
-  background-color: #0076B5;
+  background-color: #353535;
 }
 
 
@@ -21,8 +26,8 @@ table{
     border-collapse: collapse;
     width: 100%;
     margin: 10px  auto;
- 
-
+ text-decoration: none;
+max-height: 1200px;
 
   }
   
@@ -38,7 +43,7 @@ table{
  
   
    tbody tr:hover {
-    background-color: rgb( 77, 189, 224 ) !important;
+    background-color: rgb(135, 136, 136) !important;
    color: #fff;
    font-weight: bold;
    

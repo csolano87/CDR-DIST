@@ -8,6 +8,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { UsuariosComponent } from "./mantenimientos/usuarios/usuarios.component";
 
 
+
 import { PagesComponent } from "./pages.component";
 import { UsuarioComponent } from "./mantenimientos/usuarios/usuario/usuario.component";
 import { PerfilComponent } from "./mantenimientos/perfil/perfil.component";

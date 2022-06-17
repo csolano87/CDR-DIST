@@ -12,7 +12,10 @@ import { AuthRoutingModule } from './auth/auth.routing';
 
 import { PagesRoutingModule } from './pages/pages.routing';
 import { NofoundpageComponent } from './nofoundpage/nofoundpage/nofoundpage.component';
-import { CustompipePipe } from './custompipe.pipe';
+
+
+
+
 
 
 
@@ -21,8 +24,9 @@ import { CustompipePipe } from './custompipe.pipe';
   declarations: [
     AppComponent,
     NofoundpageComponent,
-    CustompipePipe,
-   
+       
+    
+  
 
   ],
   imports: [
@@ -31,14 +35,14 @@ import { CustompipePipe } from './custompipe.pipe';
   AppRoutingModule,
   AuthModule,
   PagesModule,
-  PagesRoutingModule
-  
+  PagesRoutingModule,
 
+  
  
 
 
   ],
- 
+ exports:[],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

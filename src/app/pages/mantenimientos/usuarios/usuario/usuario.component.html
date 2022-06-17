@@ -4,7 +4,7 @@
         <div class="col bg-white p-5 rounded-end">
           <div class="row text-rigth">
             <div class="col">
-              <button class="btn btn-primary "
+              <button class="btn btn-secondary"
                       routerLink="/dashboard/usuarios">
                 <i class="fa fa-arrow-left"></i>
                 Regresar
@@ -22,24 +22,20 @@
           (ngSubmit)="crearUsuario()"
           id="registerform">
    
-        
-          
-
-         <!--  <div class="mb-4">
-     
-           <label class="form-label" >Doctor</label>
-           <select class="form-select"
-       
-           formControlName="doctor"
-           [class.is-invalid]="doctorNoValido">
+          <div class=" mb-4">
            
-           <option value="">-Seleccione </option>
-     
-             <option *ngFor="let lista of listadoctor"  [value]="lista.Description">{{lista.Description}}</option>  
-           </select> 
-
-          </div> 
-          <small *ngIf="doctorNoValido"class="text-danger">Escoge una opcion</small> -->
+            <label class="form-label">Rol</label>
+            <select class="form-select"
+         
+             
+             formControlName="rol"
+             [class.is-invalid]="rolNoValido">
+            <option value="">-Seleccione-</option>
+             <option *ngFor="let rol of listaroles" [value]="rol.rol">{{rol.rol}}</option>
+            </select>
+           </div>
+           <small *ngIf="rolNoValido"class="text-danger">Rol</small>
+          
 
 
           <div class="mb-4">
@@ -81,41 +77,29 @@
           
                  
               <div class=" mb-2">
-               <label class="form-label">Password</label>
+               <label class="form-label">Contraseña</label>
                <input class="form-control" type="password"
                formControlName="password"
-               placeholder="Ingrese una contrasena"
+               placeholder="Ingrese una contraseña"
                [class.is-invalid]="passwordNoValido">
               
               </div>
-              <small *ngIf="passwordNoValido"class="text-danger">Ingrese una contrasena</small>
+              <small *ngIf="passwordNoValido"class="text-danger">Ingrese una contraseña</small>
               <div class=" mb-2">
-               <label class="form-label">Confirmar</label>
+               <label class="form-label">Confirmar Contraseña</label>
                <input class="form-control" type="password"
                placeholder="Repita constrasena"
                formControlName="password2"
                [class.is-invalid]="password2NoValido">
               </div>
-              <small *ngIf="password2NoValido"class="text-danger"> Las contrasena no son iguales</small>
+              <small *ngIf="password2NoValido"class="text-danger"> Las contraseña no son iguales</small>
              
 
-              <div class=" mb-4">
-           
-                <label class="form-label">Rol</label>
-                <select class="form-select"
-             
-                 
-                 formControlName="rol"
-                 [class.is-invalid]="rolNoValido">
-                <option value="">-Seleccione-</option>
-                 <option *ngFor="let rol of listaroles" [value]="rol.rol">{{rol.rol}}</option>
-                </select>
-               </div>
-               <small *ngIf="rolNoValido"class="text-danger">Rol</small>
+            
     
           
               <div class="d-grid">
-                  <button type="submit" class="btn btn-primary"> <i class="fa fa-save"></i> Guardar</button>
+                  <button type="submit" class="btn btn-secondary"> <i class="fa fa-save"></i> Guardar</button>
               </div>
           </form>
        </div>

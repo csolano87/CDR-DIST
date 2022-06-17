@@ -13,7 +13,10 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
 import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
 import { UsuarioComponent } from './mantenimientos/usuarios/usuario/usuario.component';
 import { PerfilComponent } from './mantenimientos/perfil/perfil.component';
-//import { OrdenesComponent } from './mantenimientos/ordenes/ordenes.component';
+import { FiltroPipe } from '../pipes/filtro.pipe';
+
+
+
 
 
 
@@ -26,15 +29,16 @@ import { PerfilComponent } from './mantenimientos/perfil/perfil.component';
   
     OrdenesComponent,
         UsuarioComponent,
-        PerfilComponent
+        PerfilComponent,
+        FiltroPipe,
   ],
   
   exports:[
     PagesComponent,
-   
+  
     UsuariosComponent,
     DashboardComponent,
- 
+  
 
   ],
   imports: [
@@ -43,9 +47,10 @@ import { PerfilComponent } from './mantenimientos/perfil/perfil.component';
     SharedModule,
     AuthModule,
     FormsModule,
-   
+
     ReactiveFormsModule,
     HttpClientModule,
+    
     
     ]
   })

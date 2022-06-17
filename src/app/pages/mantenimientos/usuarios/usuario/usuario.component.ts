@@ -145,6 +145,7 @@ console.log(this.registerform.value)
       password2:'',
       rol:'',
     });
+    
   },(err)=>{
     console.log('error',err.error.msg);
     Swal.fire({
